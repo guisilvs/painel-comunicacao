@@ -23,9 +23,40 @@ body {
 
 header {
     background-color: var(--cor-primaria);
-    color-scheme: var(--cor-branco);
+    color: var(--cor-branco);
     opacity: 0.9;
 
     padding: 20px;
     font-weight: 300;
+}
+
+header p {
+    margin-top: 5px;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/*implementação flexbox*/
+main {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px; /*vão entre barra e também entre os textos*/
+    padding: 0 20px;
+}
+
+.configuracoes {
+    flex: 1;
+    background-color: var(--cor-branco);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.input {
+    flex: 3;
+    background-color: var(--cor-branco);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
