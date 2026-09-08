@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*variáveis globais para o arquivo CSS*/
+:root {
+    --cor-fundo: #f1f1f1;
+    --cor-primaria:#005571;
+    --cor-secundaria: #8E75B2;
+    --cor-texto: #333333;
+    --cor-branco: #ffffff;
+}
+
+/*estilo geral da página*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--cor-texto);
+
+    background-color: var(--cor-fundo);
+}
+
+header {
+    background-color: var(--cor-primaria);
+    color-scheme: var(--cor-branco);
+    opacity: 0.9;
+
+    padding: 20px;
+    font-weight: 300;
+}
