@@ -7,14 +7,14 @@
 /*variáveis globais para o arquivo CSS*/
 :root {
     --cor-fundo: #f1f1f1;
-    --cor-primaria:#005571;
+    --cor-primaria:#008be7;
     --cor-secundaria: #8E75B2;
     --cor-texto: #333333;
     --cor-branco: #ffffff;
 
     /*elementos*/
     --cor-bordas: #ccc;
-    --border-radius: 8px;
+    --border-radius: 10px;
 }
 
 /*estilo geral da página*/
@@ -57,6 +57,14 @@ main {
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
+/*responsividade*/
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+}
+
+/*BOX RASCUNHOS*/
 .input {
     flex: 3;
     background-color: var(--cor-branco);
@@ -65,15 +73,8 @@ main {
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-/*responsividade*/
-@media (max-width: 768px) {
-    main {
-        flex-direction: column;
-    }
-}
-
-/*Caixa de texto*/
 textarea {
+
     width: 100%;
     padding: 15px;
     margin-top: 15px;
@@ -95,3 +96,5 @@ textarea {
 
     color: var(--cor-bordas)
 }
+
+
