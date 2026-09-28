@@ -11,6 +11,10 @@
     --cor-secundaria: #8E75B2;
     --cor-texto: #333333;
     --cor-branco: #ffffff;
+
+    /*elementos*/
+    --cor-bordas: #ccc;
+    --border-radius: 8px;
 }
 
 /*estilo geral da página*/
@@ -49,7 +53,7 @@ main {
     flex: 1;
     background-color: var(--cor-branco);
     padding: 20px;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
@@ -57,7 +61,7 @@ main {
     flex: 3;
     background-color: var(--cor-branco);
     padding: 20px;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
@@ -66,4 +70,28 @@ main {
     main {
         flex-direction: column;
     }
+}
+
+/*Caixa de texto*/
+textarea {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    resize: none;
+
+    border: 1px solid var(--cor-bordas);
+    border-radius: var(--border-radius);
+    outline: none;
+
+    font-family: inherit; /*isso força o elemento a herdar a fonte do elemento pai*/
+
+}
+
+.utilitarios {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+    font-size: 0.9em;
+
+    color: var(--cor-bordas)
 }
