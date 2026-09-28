@@ -40,7 +40,7 @@ header p {
 main {
     display: flex;
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 30px auto;
     gap: 20px; /*vão entre barra e também entre os textos*/
     padding: 0 20px;
 }
