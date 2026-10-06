@@ -15,6 +15,8 @@
     /*elementos*/
     --cor-bordas: #ccc;
     --border-radius: 10px;
+    --cor-select: rgba(0, 123, 255, 0.15);
+    /*font-size: 16px*/
 }
 
 /*estilo geral da página*/
@@ -109,7 +111,38 @@ textarea {
 
 select {
     width: 100%;
-    
+    padding: 12px;
+
+    border: 1px solid var(--cor-bordas);
+    border-radius: var(--border-radius);
+
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+
+    cursor: pointer;
 }
 
+select:focus {
+    border-color: var(--cor-bordas);
+    box-shadow: 0 0 0 4px var(--cor-select);
+}
 
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    
+    border-radius: var(--border-radius);
+    border: 1px solid var(--cor-bordas);
+    background-color: var(--cor-branco);
+
+    transition: all 0.4s ease;
+    
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--cor-select);
+    
+}
