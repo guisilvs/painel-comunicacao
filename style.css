@@ -97,4 +97,19 @@ textarea {
     color: var(--cor-bordas)
 }
 
+/*Box ajustes*/
+.grupo-tom {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+select {
+    width: 100%;
+    
+}
+
 

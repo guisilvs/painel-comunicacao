@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refinamento comunicação</title>
+    <title>Comunica Plus</title>
 
     <link rel="stylesheet" href="style.css">
+    <!--OBS: defer adia o carregamento do JS, não interrompendo a leitura do HTML-->
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -19,7 +21,7 @@
     <main>
         <!--Barra lateral - configuração-->
         <aside class="configuracoes">
-            <h2>Configurações</h2>
+            <h2>Opções</h2>
             <!--Espaço reservado para feature botões-->
             <div class="grupo-tom">
                 <label for="tom-texto">Tom de voz:</label>
@@ -28,6 +30,12 @@
                     <option value="direto">Direto</option>
                     <option value="amigavel">Amigavel</option>
                 </select>
+            </div>
+
+            <!--OBS: o ID aqui vai ser usado pelo JS enquanto o Class pelo CSS, por isso os dois-->
+            <div class="actions">
+                <button id="btn-copiar" class="btn-secundario">Copiar texto</button>
+                <button id="btn-limpar" class="btn-secundario">Limpar tudo</button>
             </div>
         </aside>
 
@@ -42,9 +50,6 @@
         </section>
 
     </main>
-
-    <!--Conexão com o JS-->
-    <script src="script.js" defer></script>
 
 </body>
 </html>
