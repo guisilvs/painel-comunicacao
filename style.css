@@ -146,3 +146,8 @@ button:hover {
     background-color: var(--cor-select);
     
 }
+
+/*botão gerar (principal)*/
+.btn-principal {
+    padding: 20px;
+}

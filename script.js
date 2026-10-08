@@ -25,6 +25,7 @@ caixaTexto.addEventListener('input', function () {
     localStorage.setItem('rascunho', caixaTexto.value);
 });
 
+//Copiar texto
 btnCopiar.addEventListener('click', function () {
     //copiar para área de tranferencia do windows/android
     if (caixaTexto.value) {
@@ -45,10 +46,11 @@ btnCopiar.addEventListener('click', function () {
     }, 2000);
 });
 
+//limpa a caixa de texto e memória
 btnLimpar.addEventListener('click', function(){
     caixaTexto.value = "";
     atualizarContador();
     localStorage.removeItem('rascunho');
 
-    caixaTexto.focus();
+    caixaTexto.focus(); //devolve o foco para a caixa de texto
 })
