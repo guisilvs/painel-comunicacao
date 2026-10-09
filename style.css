@@ -147,7 +147,25 @@ button:hover {
     
 }
 
+.texto-apoio {
+    opacity: 60%;
+}
+
 /*botão gerar (principal)*/
 .btn-principal {
     padding: 20px;
+
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
+
+    background:
+        linear-gradient(var(--cor-branco), var(--cor-branco)) padding-box,
+        linear-gradient(90deg, #008be7, #00d0df) border-box;
+}
+
+.btn-principal:hover {
+    color: var(--cor-branco);
+    background:
+        linear-gradient(var(--cor-select), var(--cor-select)) padding-box,
+        linear-gradient(90deg, #008be7, #00d0df) border-box;
 }

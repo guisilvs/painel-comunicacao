@@ -1,4 +1,4 @@
-const caixaTexto = document.getElementById('entrada');
+export const caixaTexto = document.getElementById('entrada');
 const contador = document.getElementById('contador');
 const btnCopiar = document.getElementById('btn-copiar');
 const btnLimpar = document.getElementById('btn-limpar');
