@@ -47,7 +47,7 @@ async function inicializarIA() {
 
             //disparar o download e ouvir o progresso em tempo real!
             try {
-                sessaoIA = await LanguageModel.create({
+                sessaoAI = await LanguageModel.create({
                     monitor(m) {
                         m.addEventListener('downloadprogress', (e) => {
                             // Calcula o percentual real do download e joga direto no seu painel de status
@@ -109,7 +109,7 @@ Reescreva a mensagem do usuário aplicando o tom: ${tomEscolhido}.
 Devolva APENAS o texto reescrito, sem introduções ou explicações.`
 
         if (!sessaoAI) {
-            sessaoIA = await LanguageModel.create({
+            sessaoAI = await LanguageModel.create({
                 initialPrompts: [{ role: 'system', content: systemPrompt }]
             });
         }
@@ -120,7 +120,8 @@ Devolva APENAS o texto reescrito, sem introduções ou explicações.`
         const stream = sessaoAI.promptStreaming(textoOriginal);
 
         for await (const pedaco of stream) {
-            caixaTexto.value = pedaco;
+            caixaTexto.value += pedaco;
+            atualizarContador();
         }
 
         statusAI.textContent = "Gerado com sucesso"
@@ -133,9 +134,9 @@ Devolva APENAS o texto reescrito, sem introduções ou explicações.`
 
 // apaga a sessão caso altere o tom
 selectTom.addEventListener('change', function () {
-    if (sessaoIA) {
+    if (sessaoAI) {
         console.log("Tom de voz alterado. Resetando a sessão da IA...");
-        sessaoIA.destroy();
-        sessaoIA = null; // Deixa null para o próximo clique criar uma sessão com o novo tom
+        sessaoAI.destroy();
+        sessaoAI = null; // Deixa null para o próximo clique criar uma sessão com o novo tom
     }
 });
