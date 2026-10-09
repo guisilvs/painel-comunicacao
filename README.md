@@ -27,7 +27,7 @@ Este projeto utiliza a **Prompt API** para rodar o modelo **Gemini Nano** direta
 
 **Vantagens da abordagem:**
 1.  **Privacidade Zero-Trust:** O texto digitado nunca sai da máquina do usuário.
-2.  **Zero Latência de Rede:** Processamento instantâneo offline após o download do modelo.
+2.  **Zero Latência de Rede:** Processamento offline após o download do modelo.
 3. **Custo Zero de Nuvem:** A computação é delegada ao hardware do cliente.
 
 ### Requisitos Mínimos (Google Chrome)
@@ -38,6 +38,7 @@ Como trata-se de uma tecnologia experimental, o Chrome do usuário deve atender 
 
 
 ## Como executar o projeto localmente
+![CAPA](/docs/inicial.png)
 
 Por ser um projeto de arquitetura *Client-Side* pura, não há necessidade de instalação de dependências pesadas (`node_modules`).
 
@@ -51,7 +52,7 @@ cd painel-comunicacao
 Para testar a geração de texto via IA, você precisa ativar as *flags* experimentais do navegador:
 1. Abra o Google Chrome.
 2. Digite na barra de endereços: `chrome://flags/`
-3. Busque por **Prompt API for Gemini Nano** e ative (mude para *Enabled*).
+3. Busque por **Prompt API** e ative (mude para *Enabled*).
 4. Reinicie o navegador.
 
 ### 3. Rodar a aplicação
