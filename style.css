@@ -96,6 +96,8 @@ textarea {
     margin-top: 5px;
     font-size: 0.9em;
 
+    gap: 12px;
+
     color: var(--cor-bordas)
 }
 

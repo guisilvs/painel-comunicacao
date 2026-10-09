@@ -8,8 +8,8 @@
 
     <link rel="stylesheet" href="style.css">
     <!--OBS: defer adia o carregamento do JS, não interrompendo a leitura do HTML-->
-    <script src="script.js" defer></script>
-    <script src="gemini.js" defer></script>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="gemini.js"></script>
 </head>
 
 <body>
@@ -50,8 +50,8 @@
             <textarea id="entrada" placeholder="Digite aqui..." rows="15"></textarea>
 
             <div class="utilitarios">
-                <span id="contador">0 caracteres</span>
                 <span id="status-ia" class="status-texto"></span>
+                <span id="contador">0 caracteres</span>
             </div>
         </section>
 
