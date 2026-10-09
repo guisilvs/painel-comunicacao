@@ -45,12 +45,12 @@ async function inicializarIA() {
             statusAI.textContent = "Iniciando download do modelo de IA local (cerca de 4GB)...";
             indisponibilizarServico();
 
-            //disparar o download e ouvir o progresso em tempo real!
+            //disparar o download e ouvir o progresso em tempo real
             try {
                 sessaoAI = await LanguageModel.create({
                     monitor(m) {
                         m.addEventListener('downloadprogress', (e) => {
-                            // Calcula o percentual real do download e joga direto no seu painel de status
+                            //calcula o percentual real do download e joga direto no seu painel de status
                             const progresso = (e.loaded / e.total * 100).toFixed(1);
                             statusAI.textContent = `Navegador instalando modelo de IA local... ${progresso}%`;
                         });
@@ -67,7 +67,7 @@ async function inicializarIA() {
             }
 
         } else {
-            // Se cair aqui, o usuário já tinha o modelo baixado no cache do Chrome/Edge
+            // Se cair aqui, o usuário já tinha o modelo baixado no cache do Chrome
             statusAI.textContent = "";
             disponibilizarServico();
         }
