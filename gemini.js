@@ -12,13 +12,13 @@ const statusAI = document.getElementById('status-ia');
 
 // cria uma função assincrona para verificar a disponibilidade da IA
 async function inicializarIA() {
-    console.log('IA em execução');
+    console.log('Verificação em andamento...');
 
     try {
         // Verifica se existe a variável no navegador
         if (typeof LanguageModel === 'undefined') {
             console.log("IA indisponível neste navegador")
-            statusAI.textContent = "IA não compatível neste dispositivo ou navegador";
+            statusAI.textContent = "IA não compatível neste navegador";
             indisponibilizarServico();
             return;
         }
@@ -68,6 +68,7 @@ async function inicializarIA() {
 
         } else {
             // Se cair aqui, o usuário já tinha o modelo baixado no cache do Chrome
+            console.log("IA compatível e disponível")
             statusAI.textContent = "";
             disponibilizarServico();
         }
@@ -98,15 +99,25 @@ btnGerar.addEventListener('click', async function () {
         }, 2000);
         return
     }
-
+    
     statusAI.textContent = "Gerando..."
     btnGerar.disabled = true;
 
     try {
+        console.log("Tentando gerar o texto")
         const tomEscolhido = selectTom.options[selectTom.selectedIndex].text;
-        const systemPrompt = `Você é um assistente de comunicação corporativa especialista em refatorar textos. 
-Reescreva a mensagem do usuário aplicando o tom: ${tomEscolhido}. 
-Devolva APENAS o texto reescrito, sem introduções ou explicações.`
+        const systemPrompt = `Você é um editor de comunicação corporativa especialista. Sua única função é reescrever, 
+        corrigir e aprimorar o texto fornecido pelo usuário, aplicando rigorosamente o seguinte tom: ${tomEscolhido}. 
+        Siga estas diretrizes estritas: retorne única e exclusivamente o texto reescrito. É terminantemente proibido incluir 
+        saudações iniciais, confirmações, explicações ou aspas delimitando a resposta; o primeiro caractere da sua saída 
+        deve ser diretamente o texto final. Você é o revisor e não o destinatário da mensagem, portanto, nunca altere a pessoa 
+        gramatical do discurso, não responda à mensagem do usuário e não inverta o emissor. Respeite rigorosamente a formatação e a 
+        intenção originais: se a entrada estiver entre parênteses, a saída deve estar entre parênteses; se for um e-mail, 
+        mantenha o formato de e-mail, sendo permitido adicionar quebras de parágrafos e assinaturas 
+        cordiais de encerramento para melhorar a legibilidade. É estritamente proibido utilizar emojis de 
+        qualquer tipo ou formato, mesmo que o tom escolhido seja amigável. Melhore a fluidez e a gramática sem 
+        adicionar informações inventadas que fujam do escopo original. Seu processamento falhará se houver qualquer palavra,
+         aviso ou caractere na sua resposta que não seja parte integrante do texto final reescrito.`
 
         if (!sessaoAI) {
             sessaoAI = await LanguageModel.create({
