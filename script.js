@@ -1,12 +1,17 @@
-export const caixaTexto = document.getElementById('entrada');
+const caixaTexto = document.getElementById('entrada');
 const contador = document.getElementById('contador');
 const btnCopiar = document.getElementById('btn-copiar');
+const btnGerar = document.getElementById('btn-gerar');
 const btnLimpar = document.getElementById('btn-limpar');
+const selectTom = document.getElementById('tom-texto');
+
+export { caixaTexto, btnGerar, selectTom };
 
 //Função para atualizara o contador
-function atualizarContador() {
+export function atualizarContador() {
     const caracteres = caixaTexto.value.length;
     contador.textContent = `${caracteres} caracteres`;
+    return(caracteres);
 };
 
 //Recuperação de texto digitado
@@ -54,3 +59,27 @@ btnLimpar.addEventListener('click', function(){
 
     caixaTexto.focus(); //devolve o foco para a caixa de texto
 })
+
+export function indisponibilizarServico() {
+    btnGerar.disabled = true;
+    btnGerar.textContent = "Indisponível";
+    //caixaTexto.value = "";
+    caixaTexto.placeholder = ""
+    caixaTexto.disabled = true;
+    
+    selectTom.disabled = true;
+    btnCopiar.disabled = true;
+    btnLimpar.disabled = true;
+}
+
+export function disponibilizarServico() {
+    btnGerar.disabled = false;
+    btnGerar.textContent = "Gerar com IA";
+    //caixaTexto.value = "";
+    caixaTexto.placeholder = "Digite aqui..."
+    caixaTexto.disabled = false;
+    
+    selectTom.disabled = false;
+    btnCopiar.disabled = false;
+    btnLimpar.disabled = false;
+}
