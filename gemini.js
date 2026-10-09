@@ -128,6 +128,10 @@ Devolva APENAS o texto reescrito, sem introduções ou explicações.`
 
     } catch (erro) {
         console.error("Erro durante o processamento da IA", erro);
+        statusAI.textContent = "Não foi possível gerar..."
+    } finally {
+        statusAI.textContent = "";
+        btnGerar.disabled = false;
     }
 
 });
